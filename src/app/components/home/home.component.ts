@@ -120,6 +120,10 @@ export class HomeComponent implements OnInit {
       var personaLocal = {
         'idLocal': persona["id"],
         'nombreLocal': persona["nombre"],
+        'apellidoLocal': persona["apellido"],
+        'direccionLocal': persona["direccion"],
+        'telefonoLocal': persona["telefono"],
+        'emailLocal': persona["email"]
       }
       var personaObj = JSON.stringify(personaLocal)
       localStorage.setItem('idLocal', personaObj);
