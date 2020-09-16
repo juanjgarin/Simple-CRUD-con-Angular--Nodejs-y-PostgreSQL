@@ -1,0 +1,65 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card card-body">
+                <form class="form-persona" #formPersona="ngForm" (ngSubmit)="guardarPersona(formPersona)">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="choose">Nombre: </label>
+                            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Inserte nombre..."  [(ngModel)]="this.consulta.selectedPersonas.nombre">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="choose">Apellido: </label>
+                            <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Inserte apellido..." [(ngModel)]="this.consulta.selectedPersonas.apellido">
+                        </div>
+                        <div class="col-md-12">
+                            <label>Dirección: </label>
+                            <input type="text" name="direccion" id="direccion" class="form-control" placeholder="Inserte direccion..." [(ngModel)]="this.consulta.selectedPersonas.direccion">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">Teléfono: </label>
+                            <input type="text" name="telefono" id="telefono" class="form-control" placeholder="Inserte telefono..." [(ngModel)]="this.consulta.selectedPersonas.telefono">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">Email: </label>
+                            <input type="text" name="email" id="email" class="form-control" placeholder="Inserte email..." [(ngModel)]="this.consulta.selectedPersonas.email">
+                        </div>
+                        <div class="col-md-12">
+                            <br>
+                            <button type="submit" class="btn btn-success">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        
+
+        <div class="col-md-9">
+            <table id="test_datatable_angular" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Dirección</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr MdbTableCol *ngFor="let persona of personas">
+                        <td>{{persona.id}}</td>
+                        <td>{{persona.nombre}}</td>
+                        <td>{{persona.apellido}}</td>
+                        <td>{{persona.direccion}}</td>
+                        <td>{{persona.telefono}}</td>
+                        <td>{{persona.email}}</td>
+                        <td><button class="btn btn-success" routerLink="/modper" (click)="localPersona(persona)"><i class="fas fa-edit"></i></button> <button class="btn btn-danger" (click)="eliminarPersona(persona.id)"><i class="far fa-trash-alt"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> 
