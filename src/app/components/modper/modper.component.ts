@@ -38,8 +38,6 @@ export class ModperComponent implements OnInit {
     var emailOld = this.newID['emailLocal'];
 
     $(document).ready(function() {
-      console.log('rata:', nombreOld);
-      console.log( "ready! el nombre viejardo: ", this.nombreOld );
       $('#nombre').val(nombreOld);
       $('#apellido').val(apellidoOld);
       $('#direccion').val(direccionOld);
